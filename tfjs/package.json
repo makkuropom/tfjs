@@ -85,12 +85,12 @@
     "test-ci": "./scripts/test-ci.sh"
   },
   "dependencies": {
-    "@tensorflow/tfjs-backend-cpu": "link:../tfjs-backend-cpu",
-    "@tensorflow/tfjs-backend-webgl": "link:../tfjs-backend-webgl",
-    "@tensorflow/tfjs-converter": "link:../tfjs-converter",
-    "@tensorflow/tfjs-core": "link:../tfjs-core",
-    "@tensorflow/tfjs-data": "link:../tfjs-data",
-    "@tensorflow/tfjs-layers": "link:../tfjs-layers",
+    "@tensorflow/tfjs-backend-cpu": "file:../tfjs-backend-cpu",
+    "@tensorflow/tfjs-backend-webgl": "file:../tfjs-backend-webgl",
+    "@tensorflow/tfjs-converter": "file:../tfjs-converter",
+    "@tensorflow/tfjs-core": "file:../tfjs-core",
+    "@tensorflow/tfjs-data": "file:../tfjs-data",
+    "@tensorflow/tfjs-layers": "file:../tfjs-layers",
     "argparse": "^1.0.10",
     "chalk": "^4.1.0",
     "core-js": "3",
