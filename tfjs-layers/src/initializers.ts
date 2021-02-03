@@ -536,11 +536,6 @@ export class Orthogonal extends Initializer {
     super();
     this.gain = args.gain == null ? this.DEFAULT_GAIN : args.gain;
     this.seed = args.seed;
-
-    if (this.seed != null) {
-      throw new NotImplementedError(
-          'Random seed is not implemented for Orthogonal Initializer yet.');
-    }
   }
 
   apply(shape: Shape, dtype?: DataType): Tensor {
@@ -558,7 +553,7 @@ export class Orthogonal extends Initializer {
       // TODO(cais): Add seed support.
       const normalizedShape =
           shape[0] > shape[1] ? [shape[1], shape[0]] : shape;
-      const a = K.randomNormal(normalizedShape, 0, 1, 'float32') as Tensor2D;
+      const a = K.randomNormal(normalizedShape, 0, 1, 'float32', this.seed) as Tensor2D;
       let q = linalg.gramSchmidt(a) as Tensor2D;
       if (shape[0] > shape[1]) {
         q = q.transpose();
